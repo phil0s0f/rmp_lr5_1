@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView textView;
     private EditText nameBox;
+    private EditText famBox;
     private Button button;
     static final String NAME = "NAME";
     static final String FAM = "FAM";
@@ -25,12 +26,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         textView = findViewById(R.id.textOutput);
         nameBox = findViewById(R.id.editTextName);
+        famBox = findViewById(R.id.editTextFam);
         button = findViewById(R.id.buttonSend);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String name = nameBox.getText().toString();
-                String fam = nameBox.getText().toString();
+                String fam = famBox.getText().toString();
                 Intent intent = new Intent
                         (MainActivity.this, SecondActivity.class);
                 intent.putExtra(NAME, name);
